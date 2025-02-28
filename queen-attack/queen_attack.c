@@ -1,32 +1,22 @@
 #include "queen_attack.h"
-int board[8][8] = {
-    {2,4,3,5,6,3,4,2},
-    {1,1,1,1,1,1,1,1},
-    {0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0},
-    {1,1,1,1,1,1,1,1},
-    {2,4,3,5,6,3,4,2}
-};
-int blackWhite[8][8] = {
-    {2,2,2,2,2,2,2,2},
-    {2,2,2,2,2,2,2,2},
-    {2,2,2,2,2,2,2,2},
-    {1,1,1,2,2,2,2,2},
-    {2,2,2,2,2,2,2,2},
-    {2,2,2,2,2,2,2,2},
-    {1,1,1,1,1,1,1,1},
-    {1,1,1,1,1,1,1,1}
-};
-int piece = board[][];
-int color = blackWhite[][];
+#include "stdlib.h"
 attack_status_t can_attack(position_t queen_1, position_t queen_2)
-{
-    
-   if(x > 7 || x < 0 || y > 7 || y < 0)
+{ 
+   if(( queen_1.row> 7 || queen_1.column > 7 ) || ( queen_2.row> 7 || queen_2.column > 7 ))
+   {
         return INVALID_POSITION;
-    if(piece == 0){
-        return INVALID_POSITION;  
+   }
+    if((queen_1.row == queen_2.row) && (queen_1.column == queen_2.column))
+    {
+        return INVALID_POSITION;
     }
+    if((queen_1.row == queen_2.row) || (queen_1.column == queen_2.column))
+    {
+        return CAN_ATTACK;
+    }
+    if (abs(queen_1.row-queen_2.row)==abs(queen_1.column-queen_2.column))
+    {
+        return CAN_ATTACK;
+    }
+ return CAN_NOT_ATTACK;      
 }
