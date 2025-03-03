@@ -1,4 +1,7 @@
 #include "darts.h"
-if()
+if
+{
+}
+if
 {
 }
