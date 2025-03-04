@@ -15,6 +15,9 @@ uint8_t score (coordinate_t landing_position)
     if((circle_radius>5) && (circle_radius<=10))
     {
         score=1;
+		
+		
+		
     }
     if(circle_radius>10)
     {
