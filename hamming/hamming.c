@@ -10,14 +10,6 @@ int compute(const char *lhs, const char *rhs)
         lhs++;
         rhs++;
     }
-  /*  while(*lhs && (*lhs == *rhs))
-    {
-        lhs++;
-        rhs++;
-    }
-    if(*lhs != *rhs) 
-    {
-        flag++;
-    }*/
+
     return flag;
 }
