@@ -10,6 +10,9 @@ int compute(const char *lhs, const char *rhs)
         lhs++;
         rhs++;
     }
-
+    if(*lhs != 0 || *rhs != 0)
+    {
+        return -1;
+    }
     return flag;
 }
