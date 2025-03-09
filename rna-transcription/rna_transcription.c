@@ -1,15 +1,21 @@
 #include "rna_transcription.h"
+
 char *to_rna(const char *dna)
-{
-    char *rna='0';
-    switch (*dna)
+{char *rna = malloc(strlen(dna) + 1);
+ char *current = rna;
+   while(*dna)
+   {
+       switch (*dna)
     {
-        case 'G': (*rna++)='C';break;
-        case 'C': (*rna++)='G';break;
-        case 'T': (*rna++)='A';break;
-        case 'A': (*rna++)='U';break;
+        case 'G': (*current)='C';break;
+        case 'C': (*current)='G';break;
+        case 'T': (*current)='A';break;
+        case 'A': (*current)='U';break;
             
     }
-    return rna;
-    
+       current++;
+        dna++;
+   }
+    *current = '\0';
+    return rna;  
 }
