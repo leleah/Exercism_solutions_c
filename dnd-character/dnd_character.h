@@ -1,6 +1,7 @@
 #ifndef DND_CHARACTER_H
 #define DND_CHARACTER_H
-
+#include <stdlib.h>
+#include <time.h>
 typedef struct {
    int strength;
    int dexterity;
